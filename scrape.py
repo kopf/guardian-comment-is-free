@@ -8,6 +8,10 @@ import requests
 
 URL = 'https://www.theguardian.com/uk/commentisfree/rss'
 DATASET_FILE = '/home/kopf/dev/guardian/dataset.json'
+REPLACEMENTS = {
+    "Steve Bell\u2019s If ...": "",
+    "Steve Bell's If \u2026": "",
+}
 
 
 def main():
@@ -26,13 +30,17 @@ def main():
             date = getattr(item, 'dc:date')
             if date:
                 date = date.text
+            title = item.title.text
+            for find, replace in REPLACEMENTS.items():
+                title = title.replace(find, replace)
             dataset[item.guid.text] = {
-                'title': item.title.text,
+                'title': title,
                 'description': item.description.text,
                 'author': author,
                 'date': date
             }
     if altered:
+        print("Saving...")
         with open(DATASET_FILE, 'w') as f:
             f.write(json.dumps(dataset, indent=4))
             
