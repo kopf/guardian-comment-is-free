@@ -17,6 +17,8 @@ class POSifiedText(markovify.Text):
 REPLACEMENTS = {
     '\u2019': "'",
     " 's": "'s",
+    " 'd": "'d",
+    " 've": "'ve",
     " .": ".",
     " ,": ",",
     " n't": "n't",
