@@ -22,7 +22,7 @@ def main():
         dataset = json.load(f)
     altered = False
     for item in soup.find_all('item'):
-        if item.guid.text not in dataset:
+        if '/commentisfree/' in item.guid.text and item.guid.text not in dataset:
             altered = True
             author = getattr(item, 'dc:creator')
             if author:
