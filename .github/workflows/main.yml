@@ -13,9 +13,11 @@ jobs:
           version: "0.5.30"
           enable-cache: true
       - name: Download dataset
-        uses: actions/download-artifact@v4
+        id: download-artifact
+        uses: dawidd6/action-download-artifact@v8
         with:
           name: dataset
+          branch: master
       - name: Scrape
         run: ./scrape.py ./dataset.json
       - name: Archive dataset
