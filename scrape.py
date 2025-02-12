@@ -23,7 +23,6 @@ REPLACEMENTS = {
 
 
 def main():
-    run_start = datetime.utcnow().strftime('%Y-%m-%d.%H_%M_%S')
     with open(DATASET_FILE, 'r') as f:
         dataset = json.load(f)
     r = requests.get(URL)
