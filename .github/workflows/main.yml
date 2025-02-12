@@ -6,7 +6,7 @@ on:
     - cron: '30 * * * *'
 jobs:
   guardian:
-    name: python
+    name: Scrape
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
