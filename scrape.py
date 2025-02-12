@@ -8,13 +8,14 @@
 
 from datetime import datetime
 import json
+import sys
 
 from bs4 import BeautifulSoup
 import requests
 
 
 URL = 'https://www.theguardian.com/uk/commentisfree/rss'
-DATASET_FILE = '/home/kopf/dev/guardian/dataset.json'
+DATASET_FILE = sys.argv[-1]
 REPLACEMENTS = {
     "Steve Bell\u2019s If ...": "",
     "Steve Bell's If \u2026": "",
@@ -23,10 +24,10 @@ REPLACEMENTS = {
 
 def main():
     run_start = datetime.utcnow().strftime('%Y-%m-%d.%H_%M_%S')
-    r = requests.get(URL)
-    soup = BeautifulSoup(r.text, "html.parser")
     with open(DATASET_FILE, 'r') as f:
         dataset = json.load(f)
+    r = requests.get(URL)
+    soup = BeautifulSoup(r.text, "html.parser")
     altered = False
     for item in soup.find_all('item'):
         if '/commentisfree/' in item.guid.text and item.guid.text not in dataset:
