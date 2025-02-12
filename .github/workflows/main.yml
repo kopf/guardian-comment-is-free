@@ -14,6 +14,8 @@ jobs:
           enable-cache: true
       - name: Download dataset
         uses: actions/download-artifact@v4
+        with:
+          name: dataset
       - name: Scrape
         run: ./scrape.py ./dataset.json
       - name: Archive dataset
