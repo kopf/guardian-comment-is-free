@@ -1,4 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env -S uv run --script
+# /// script
+# dependencies = [
+#     "beautifulsoup4==4.9.3",
+#     "requests==2.25.0",
+# ]
+# ///
+
 from datetime import datetime
 import json
 
