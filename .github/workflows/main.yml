@@ -1,5 +1,5 @@
 name: Main Pipeline
-
+on: push
 jobs:
   guardian:
     name: python
