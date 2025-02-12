@@ -23,14 +23,8 @@ REPLACEMENTS = {
 
 
 def main():
-    try:
-        with open(DATASET_FILE, 'r') as f:
-            dataset = json.load(f)
-    except:
-        r = requests.get('https://157.90.252.43/dataset.json', verify=False)
-        dataset = r.json()
-        with open(DATASET_FILE, 'w') as f:
-            f.write(json.dumps(dataset, indent=4))
+    with open(DATASET_FILE, 'r') as f:
+        dataset = json.load(f)
     r = requests.get(URL)
     soup = BeautifulSoup(r.text, "html.parser")
     altered = False
