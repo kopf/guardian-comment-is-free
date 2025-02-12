@@ -47,6 +47,7 @@ def main():
                 'author': author,
                 'date': date
             }
+    print("Dataset contains {} items".format(len(dataset)))
     if altered:
         print("Saving...")
         with open(DATASET_FILE, 'w') as f:
