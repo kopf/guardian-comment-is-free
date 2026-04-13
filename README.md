@@ -7,7 +7,7 @@ The Guardian has a _Comment is Free_ article that's always stood out for its ver
 * We need scientists to quiz Covid consensus, not act as agents of disinformation | Sonia Sodha
 * Hate-filled abuse is poisoning Britain. I fought it, and ask you to do the same | Gina Miller
 
-Those are just a few examples chosen at random from the dataset. The dataset is compiled by running `scrape.py` a couple of times daily in a github actions pipeline. It's stored as a github artifact. I'd thrown it together quickly sometime in 2016 with a view to using it to feed an automated "Headline Generator" using markov chains or something else. 
+Those are just a few examples chosen at random from a dataset of tens of thousands of _Comment is Free_ headlines I've compiled over the years. I'd thrown a script together quickly sometime in 2016 with a view to using it to feed an automated "Headline Generator" using markov chains or something else, and kept github actions running it a few times a day. 
 
 Then, more important things (literally absolutely anything else in the entire world) came along and I never got around to finishing it, i.e. writing the headline generator, which was the whole point of this stupid exercise to begin with. LLMs also came along in the meantime, the perfect solution for when code quality and correctness does not matter one iota. So here we are. 
 
