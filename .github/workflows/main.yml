@@ -29,3 +29,5 @@ jobs:
         with:
           name: dataset
           path: dataset.json
+      - name: Ping healthchecks.io
+        run: curl ${MONITORING_URL}
