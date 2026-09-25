@@ -30,4 +30,4 @@ jobs:
           name: dataset
           path: dataset.json
       - name: Ping healthchecks.io
-        run: curl ${MONITORING_URL}
+        run: curl "${{ secrets.MONITORING_URL }}"
